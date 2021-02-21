@@ -1,35 +1,19 @@
 <?php
 
-
-class SQLQuery implements IQuery {
-      private $table;
-      private $bindings;
-      private $offset;
-      private $limit;
-      private $wheres;
-      private $action;
-
-      public function setTable(string $table) {
-
-            return $this;
-      }
-      public function addBinding(string $key, string $value) {
-            return $this;
-      }
-      public function removeBinding(string $key) {
-            return $this;
-      }
-      public function setPaginate(int $limit, int $offset) {
-            return $this;
-      }
-      public function addWhere(string $column, string $operator, string $value) {
-            return $this;
-      }
-      public function select() {
-            return $this;
-      }
-      public function compile() {
-            
-      }
-      
+trait SQLCrud {
+  public function create(SQLQuery $query) {
+    echo ' * SQLCrud > create * ' . PHP_EOL;
   }
+  public function update(SQLQuery $query) {
+    echo ' * SQLCrud > update * ' . PHP_EOL;
+  }
+  public function delete(SQLQuery $query) {
+    echo ' * SQLCrud > delete * ' . PHP_EOL;
+  }
+  public function get(SQLQuery $query) {
+    echo ' * SQLCrud > get * ' . PHP_EOL;
+  }
+  public function first(SQLQuery $query) {
+    echo ' * SQLCrud > first * ' . PHP_EOL;
+  }
+}

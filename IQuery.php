@@ -1,8 +1,4 @@
 <?php
-
-
-interface IQuery
-{
-
-      public function compile();
+interface IQuery {
+	public function compile();
 }
